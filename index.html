@@ -26,8 +26,8 @@
         const queryParams = new URLSearchParams(window.location.search);
         const site = queryParams.get('site');
          
-        if (site && ALLOWED_SITES.includes(site)) {
-            document.getElementById("iframe-container").src = site;
+         if (site && ALLOWED_SITES?.length > parseInt(site)) {
+            document.getElementById("iframe-container").src = ALLOWED_SITES[parseInt(site)];
         } else {
             document.getElementById("iframe-container").src = ALLOWED_SITES[0];
         }
